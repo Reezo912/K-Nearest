@@ -57,3 +57,10 @@ def clean_reviews_for_word_analysis(df, column="review", keep_numbers=False):
     """
     df[column] = df[column].astype(str).apply(lambda x: clean_text_for_words(x, keep_numbers=keep_numbers))
     return df
+
+def remove_spaces(value):
+    if isinstance(value, list):
+        return [item.replace(" ", "") if isinstance(item, str) else item for item in value]
+    elif isinstance(value, str):
+        return value.replace(" ", "")
+    return value
