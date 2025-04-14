@@ -15,4 +15,3 @@ sympy>=1.10.1
 xgboost
 streamlit
 stop_words
-pickle
